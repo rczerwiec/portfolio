@@ -1,21 +1,16 @@
-import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
-
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-
+import * as React from "react";
+import Layout from "../components/Layout";
+import type { HeadFC, PageProps } from "gatsby";
+import "../styles/global.css";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      xd
-    </main>
-  )
-}
+    <Layout>
+      <div>test</div>
+    </Layout>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Portfolio</title>;
