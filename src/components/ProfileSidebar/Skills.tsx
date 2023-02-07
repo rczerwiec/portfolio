@@ -1,57 +1,58 @@
 import React from "react";
+import styled from "styled-components";
 
-const skillsContainerStyles = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "start",
-};
 
-const skillInfo = {
-  fontFamily: "Poppins",
-  fontStyle: "normal",
-  fontWeight: 700,
-  fontSize: "14px",
-  lineWeight: "21px",
-  color: "white",
-  marginBottom: "5px",
-};
+const SkillsContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: start;`
 
-const skillInfoContent = {
-  fontFamily: "Poppins",
-  fontStyle: "normal",
-  fontWeight: 400,
-  fontSize: "12px",
-  lineWeight: "21px",
-  color: "white",
-  marginBottom: "5px",
-};
+const SkillInfoHeader = styled.div`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-weight: 21px;
+  color: white;
+  marginbottom: 5px;
+`;
 
-const skilsInfoContainer = {
-  marginTop: "20px",
-};
+const SkillInfoContent = styled.div`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-weight: 21px;
+  color: white;
+  marginbottom: 5px;
+`;
+
+const SkilsInfoContainer = styled.div`
+margin-top: 20px;
+`
 
 function SkillsComponent() {
   return (
-    <div style={skillsContainerStyles}>
-      <div style={skilsInfoContainer}>
-        <div style={skillInfo}>FrontEnd Skills</div>
-        <div style={skillInfoContent}>JS/TS React.js, Redux ToolKit</div>
-      </div>
-      <div style={skilsInfoContainer}>
-        <div style={skillInfo}>Styling Skills</div>
-        <div style={skillInfoContent}>CSS, SASS, TailwindCSS</div>
-      </div>
-      <div style={skilsInfoContainer}>
-        <div style={skillInfo}>Backend Skills</div>
-        <div style={skillInfoContent}>Node.js, Express, MongoDB</div>
-      </div>
-      <div style={skilsInfoContainer}>
-        <div style={skillInfo}>Currently Learning</div>
-        <div style={skillInfoContent}>
+    <SkillsContainer>
+      <SkilsInfoContainer>
+        <SkillInfoHeader>FrontEnd Skills</SkillInfoHeader>
+        <SkillInfoContent>JS/TS React.js, Redux ToolKit</SkillInfoContent>
+      </SkilsInfoContainer>
+      <SkilsInfoContainer>
+        <SkillInfoHeader>Styling Skills</SkillInfoHeader>
+        <SkillInfoContent>CSS, SASS, TailwindCSS</SkillInfoContent>
+      </SkilsInfoContainer>
+      <SkilsInfoContainer>
+        <SkillInfoHeader>Backend Skills</SkillInfoHeader>
+        <SkillInfoContent>Node.js, Express, MongoDB</SkillInfoContent>
+      </SkilsInfoContainer>
+      <SkilsInfoContainer>
+        <SkillInfoHeader>Currently Learning</SkillInfoHeader>
+        <SkillInfoContent>
           Nest.js, Next.js, Gatsby, Java Spring, Figma
-        </div>
-      </div>
-    </div>
+        </SkillInfoContent>
+      </SkilsInfoContainer>
+    </SkillsContainer>
   );
 }
 

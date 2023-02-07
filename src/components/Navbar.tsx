@@ -1,64 +1,62 @@
 import React from "react";
 import { IoMdMenu } from "react-icons/io";
+import styled from "styled-components";
 
-const navbarStyles = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  backgroundColor: "#154019",
-  height: "100%",
-  width: "80px",
-  borderRadius: "6px",
-};
+const NavbarContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #154019;
+  height: 100%;
+  width: 80px;
+  border-radius: 6px;
+`;
 
-const iconDiv = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  backgroundColor: "#1A4D1F",
-  height: "80px",
-  borderRadius: "6px",
-};
+const MenuIconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #1a4d1f;
+  height: 80px;
+  border-radius: 6px;
+`;
+const FlagsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const FlagImg = styled.img`
+  width: 60%;
+  margin-bottom: 10px;
+  border-radius: 6px;
+`;
 
 const iconStyles = {
   width: "30px",
   height: "30px",
 };
 
-const flagsStyles = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-};
-
-const flagStyles = {
-  width: "60%",
-  marginBottom: "10px",
-  borderRadius: 6,
-};
-
 function NavigationSidebarComponent() {
   return (
-    <div style={navbarStyles}>
-      <div style={iconDiv}>
+    <NavbarContainer>
+      <MenuIconContainer>
         <IoMdMenu style={iconStyles} />
-      </div>
+      </MenuIconContainer>
 
-      <div style={flagsStyles}>
-        <img
-          style={flagStyles}
+      <FlagsContainer>
+        <FlagImg
           alt="Polish"
           src="http://purecatamphetamine.github.io/country-flag-icons/3x2/PL.svg"
         />
-        <img
-          style={flagStyles}
+        <FlagImg
           alt="English"
           src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg"
         />
-      </div>
-    </div>
+      </FlagsContainer>
+    </NavbarContainer>
   );
 }
 

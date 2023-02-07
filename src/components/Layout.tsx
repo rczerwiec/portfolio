@@ -1,31 +1,33 @@
 import React from "react";
+import styled from "styled-components";
 import NavigationSidebarComponent from "./Navbar";
 import ProfileSidebarComponent from "./ProfileSidebar/ProfileSidebar";
 
-const pageStyles = {
-  color: "#232129",
-  marginLeft: 100,
-  marginRight: 100,
-  marginTop: 30,
-  borderRadius: 6,
-  height: "95vh",
-  background: "linear-gradient(180deg, #1A4D1F 0%, rgba(25, 35, 26, 0) 100%)",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  backgroundColor: "#000",
-  display: "flex",
-  justifyContent: "space-between",
+const Main = styled.main`
+  color: #232129;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 30px;
+  border-radius: 6px;
+  height: 95vh;
+  background: linear-gradient(180deg, #1A4D1F 0%, rgba(25, 35, 26, 0) 100%);
+  display: flex;
+  justify-content: space-between;
+`
 
-};
+interface IProps {
+  children: React.ReactNode;
+}
 
-function Layout({children}:JSX.Element) {
+function Layout({children}:IProps) {
 
   return (
     <div>
-      <main style={pageStyles}>
+      <Main>
         <ProfileSidebarComponent/>
         {children}
         <NavigationSidebarComponent/>
-      </main>
+      </Main>
     </div>
   );
 }
