@@ -17,7 +17,6 @@ height: 100%;`
 
 const ProfileInfoContainer = styled.div`
 margin-top: 20px;
-
 `
 
 const Name = styled.div`

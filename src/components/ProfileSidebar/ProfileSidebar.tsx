@@ -6,8 +6,10 @@ import { IoMdDocument } from "react-icons/io";
 import styled from "styled-components";
 import ProfileInfo from "./ProfileInfo";
 import SkillsComponent from "./SkillsComponent";
+import {motion} from "framer-motion";
 
-const SidebarContainer = styled.div`
+
+const SidebarContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -41,11 +43,18 @@ const navIcon = {
   height: "40px",
   color: "white",
   marginLeft: "15px",
+  cursor: "pointer",
 };
 
 function ProfileSidebarComponent() {
   return (
-    <SidebarContainer>
+    <SidebarContainer           initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{
+      duration: 0.8,
+      delay: 0.2,
+      ease: [0, 0.71, 0.2, 1.01],
+    }}>
       <ProfileContainer>
         <ProfileInfo />
         <Divider />

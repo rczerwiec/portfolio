@@ -5,9 +5,10 @@ import ProfileSidebarComponent from "./ProfileSidebar/ProfileSidebar";
 
 const Main = styled.main`
   color: #232129;
-  margin-left: 100px;
-  margin-right: 100px;
   margin-top: 30px;
+  min-width:1000px;
+  margin-left:100px;
+  margin-right:100px;
   border-radius: 6px;
   height: 95vh;
   background: linear-gradient(180deg, #1A4D1F 0%, rgba(25, 35, 26, 0) 100%);

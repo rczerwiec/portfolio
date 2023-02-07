@@ -4,6 +4,7 @@ import type { HeadFC, PageProps } from "gatsby";
 import "../styles/global.css";
 import styled from "styled-components";
 import CityImg from "../images/city.jpg";
+import { motion } from "framer-motion";
 
 const Content = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const Content = styled.div`
   width: 100%;
 `;
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -29,7 +30,7 @@ const HeaderContainer = styled.div`
   border-radius: 10px;
 `;
 
-const ProjectsContainer = styled.div`
+const ProjectsContainer =  styled(motion.div)`
   background-color: #154019;
   margin-left: 30px;
   margin-right: 30px;
@@ -56,6 +57,18 @@ const AllProjectsContainer = styled.div`
   margin-left: 30px;
   margin-right: 30px;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 1em;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: black;
+  }
 `;
 
 const SingleProject = styled.div`
@@ -64,8 +77,7 @@ const SingleProject = styled.div`
   background-color: #d9d9d9;
   border-radius: 6px;
   min-height: 240px;
-  margin-bottom:20px;
-
+  margin-bottom: 20px;
 `;
 
 const ProjectName = styled.h3`
@@ -113,39 +125,54 @@ const Name = styled.h1`
   color: white;
   margin-top: auto;
   margin-bottom: auto;
-`
+`;
 
 const IndexPage: React.FC<PageProps> = () => {
-
-  const renderProjects = [...Array(3)].map(() => {
-    return <SingleProject>
-    <ProjectName>JetTasks</ProjectName>
-    <SingleProjectContent>
-      <ProjectDescription>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-        ultrices vehicula iaculis. Fusce nec commodo orci. Etiam
-        blandit ultricies nunc, eu viverra lorem dignissim non. Etiam
-        vel accumsan augue.Etiam blandit ultricies nunc, eu viverra
-        lorem dignissim non. Etiam vel accumsan augueEtiam blandit
-        ultricies nunc, eu viverra lorem dignissim non. Etiam vel
-        accumsan augueEtiam blandit ultricies nunc, eu viverra lorem
-        dignissim non. Etiam vel accumsan augueEtiam blandit ultricies
-        nunc, eu viverra lorem dignissim non. Etiam vel accumsan augue
-      </ProjectDescription>
-      <ProjectImg />
-    </SingleProjectContent>
-  </SingleProject>
-  })
+  const renderProjects = [...Array(6)].map(() => {
+    return (
+      <SingleProject>
+        <ProjectName>JetTasks</ProjectName>
+        <SingleProjectContent>
+          <ProjectDescription>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            ultrices vehicula iaculis. Fusce nec commodo orci. Etiam blandit
+            ultricies nunc, eu viverra lorem dignissim non. Etiam vel accumsan
+            augue.Etiam blandit ultricies nunc, eu viverra lorem dignissim non.
+            Etiam vel accumsan augueEtiam blandit ultricies nunc, eu viverra
+            lorem dignissim non. Etiam vel accumsan augueEtiam blandit ultricies
+            nunc, eu viverra lorem dignissim non. Etiam vel accumsan augueEtiam
+            blandit ultricies nunc, eu viverra lorem dignissim non. Etiam vel
+            accumsan augue
+          </ProjectDescription>
+          <ProjectImg />
+        </SingleProjectContent>
+      </SingleProject>
+    );
+  });
 
   return (
     <Layout>
       <Content>
-        <HeaderContainer><Name>Radosław Czerwiec</Name></HeaderContainer>
-        <ProjectsContainer>
+        <HeaderContainer
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        >
+          <Name>Radosław Czerwiec</Name>
+        </HeaderContainer>
+        <ProjectsContainer initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}>
           <ProjectsText>Projects</ProjectsText>
-          <AllProjectsContainer>
-            {renderProjects}
-          </AllProjectsContainer>
+          <AllProjectsContainer>{renderProjects}</AllProjectsContainer>
         </ProjectsContainer>
       </Content>
     </Layout>
