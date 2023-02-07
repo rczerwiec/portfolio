@@ -5,6 +5,9 @@ import "../styles/global.css";
 import styled from "styled-components";
 import CityImg from "../images/city.jpg";
 import { motion } from "framer-motion";
+import { BlackH3Bold } from "../styles/globalText";
+import GlobalStyles from "../styles/globalStyles";
+
 
 const Content = styled.div`
   display: flex;
@@ -57,18 +60,6 @@ const AllProjectsContainer = styled.div`
   margin-left: 30px;
   margin-right: 30px;
   overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    width: 1em;
-  }
-
-  &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: black;
-  }
 `;
 
 const SingleProject = styled.div`
@@ -78,16 +69,6 @@ const SingleProject = styled.div`
   border-radius: 6px;
   min-height: 240px;
   margin-bottom: 20px;
-`;
-
-const ProjectName = styled.h3`
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 24px;
-  color: black;
-  margin-left: 20px;
 `;
 
 const SingleProjectContent = styled.div`
@@ -131,7 +112,8 @@ const IndexPage: React.FC<PageProps> = () => {
   const renderProjects = [...Array(6)].map(() => {
     return (
       <SingleProject>
-        <ProjectName>JetTasks</ProjectName>
+        <GlobalStyles/>
+        <BlackH3Bold>JetTasks</BlackH3Bold>
         <SingleProjectContent>
           <ProjectDescription>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
