@@ -5,7 +5,7 @@ import { ImLinkedin } from "react-icons/im";
 import { IoMdDocument } from "react-icons/io";
 import styled from "styled-components";
 import ProfileInfo from "./ProfileInfo";
-import SkillsComponent from "./Skills";
+import SkillsComponent from "./SkillsComponent";
 
 const SidebarContainer = styled.div`
   display: flex;

@@ -13,6 +13,7 @@ const Main = styled.main`
   background: linear-gradient(180deg, #1A4D1F 0%, rgba(25, 35, 26, 0) 100%);
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
 `
 
 interface IProps {
