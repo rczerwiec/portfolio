@@ -62,7 +62,7 @@ const AllProjectsContainer = styled.div`
   overflow-y: scroll;
 `;
 
-const SingleProject = styled.div`
+const SingleProject = styled(motion.div)`
   display: flex;
   flex-direction: column;
   background-color: #d9d9d9;
@@ -111,7 +111,9 @@ const Name = styled.h1`
 const IndexPage: React.FC<PageProps> = () => {
   const renderProjects = [...Array(6)].map(() => {
     return (
-      <SingleProject>
+      <SingleProject  initial={{ opacity: 0 }}
+               whileInView={{ opacity: 1}}
+               transition={{duration:0.8}}>
         <GlobalStyles/>
         <BlackH3Bold>JetTasks</BlackH3Bold>
         <SingleProjectContent>
